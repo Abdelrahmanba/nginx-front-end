@@ -1,0 +1,33 @@
+.add-event {
+  .optional::after {
+    content: '(Optional)';
+    opacity: 0.6;
+    font-size: 12px;
+    position: relative;
+    top: -10px;
+    left: 2px;
+  }
+  .upload {
+    width: 200px;
+    height: 50px;
+  }
+  @media screen and(max-width:700px) {
+    .upload {
+      width: 140px;
+      height: 50px;
+    }
+  }
+  .upload-list-inline {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .ant-upload-list.ant-upload-list-picture {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .select {
+    width: 100%;
+  }
+}

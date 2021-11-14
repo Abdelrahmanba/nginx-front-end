@@ -1,0 +1,117 @@
+@import '../../../theme/scssVariables';
+
+.header-menu-item {
+  margin: 0 1.2rem;
+  list-style: none;
+  padding: 20px 0 8px;
+  .menu-list.header-menu-link {
+    color: $primary-text;
+    font-size: 18px;
+  }
+  &.menu-signin {
+    margin-right: 0;
+  }
+  .menu-list.header-menu-link.user-list.selected {
+    .anticon {
+      color: $primary;
+    }
+    &::before {
+      height: 3px;
+      transform: scale(1);
+      width: 80px;
+      bottom: -18px;
+      left: -28px;
+    }
+    &::after {
+      content: none;
+    }
+  }
+
+  .menu-signup.header-menu-link {
+    color: #fff;
+    border: solid 1px $primary;
+    background: $primary;
+    padding: 5px 20px;
+    transition: all 0.5s ease;
+    white-space: nowrap;
+    font-size: 18px;
+
+    &::before {
+      height: 0;
+    }
+    &:hover {
+      background: $primary-darken;
+      color: white;
+    }
+  }
+  .menu-signin.header-menu-link {
+    font-size: 18px;
+    &::before {
+      height: 0;
+    }
+  }
+  .header-menu-link {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      transition: transform 0.5s ease;
+      height: 2px;
+      width: 100%;
+      background: $primary;
+      transform: scaleY(0);
+    }
+    &:hover {
+      color: black;
+      cursor: pointer;
+    }
+    &:hover::before {
+      transform: scaleY(1);
+    }
+    color: black;
+  }
+  .header-menu-link.selected-section {
+    color: black;
+    &::before {
+      transform: scaleY(1);
+    }
+  }
+  .user-list.header-menu-link {
+    &::before {
+      height: 0;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      height: 60px;
+      width: 90px;
+      bottom: -14px;
+      left: -33px;
+      background-color: $primary-text;
+      opacity: 0;
+      border-radius: 10px;
+      z-index: -1;
+    }
+    &:hover {
+      color: $primary-text;
+      &::after {
+        opacity: 0.06;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .switch {
+    border-left: 0;
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header-menu-item {
+    margin-top: 10px;
+  }
+}
